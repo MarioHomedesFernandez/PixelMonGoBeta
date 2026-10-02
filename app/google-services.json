@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "283770900812",
+    "project_id": "pixelmongo",
+    "storage_bucket": "pixelmongo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283770900812:android:4a6f3ff2b70af948b47fe9",
+        "android_client_info": {
+          "package_name": "com.example.simplemonstergo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsZdVvw6G__EV528t2zKKTyvtisiP9xqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

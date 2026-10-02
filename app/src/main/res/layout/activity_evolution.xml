@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <ImageView
+        android:id="@+id/ivEvolutionBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_login_waves"
+        android:alpha="0.2"
+        android:contentDescription="Background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvEvolutionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Eh? ¡Tu Pokémon está evolucionando!"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:layout_marginBottom="40dp" />
+
+        <ImageView
+            android:id="@+id/ivEvolutionPokemon"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:contentDescription="Pokemon" />
+
+        <TextView
+            android:id="@+id/tvEvolutionResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Felicidades!"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginTop="40dp" />
+
+        <Button
+            android:id="@+id/btnEvolutionDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡GENIAL!"
+            android:visibility="gone"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewFlash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:alpha="0" />
+
+</FrameLayout>

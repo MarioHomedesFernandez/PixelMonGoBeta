@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Contenedor de Perfil abajo a la izquierda -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutProfileContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/btnPerfil"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/fotoperfil"
+            android:scaleType="centerCrop"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="12dp"
+            android:background="?attr/selectableItemBackground"
+            app:shapeAppearanceOverlay="@style/CircleShape"
+            app:strokeWidth="3dp"
+            app:strokeColor="#FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPlayerLevel"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/circle_background"
+            android:elevation="14dp"
+            android:shadowColor="#000000"
+            android:shadowRadius="2"
+            app:layout_constraintBottom_toBottomOf="@id/btnPerfil"
+            app:layout_constraintEnd_toEndOf="@id/btnPerfil"
+            android:layout_marginEnd="-4dp"
+            android:layout_marginBottom="-4dp" />
+
+        <ProgressBar
+            android:id="@+id/pbPlayerExp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="60dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="4dp"
+            android:progress="0"
+            android:max="1000"
+            android:progressDrawable="@android:drawable/progress_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/btnPerfil"
+            app:layout_constraintStart_toStartOf="@id/btnPerfil"
+            app:layout_constraintEnd_toEndOf="@id/btnPerfil" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Botón Menú Pokéball central abajo -->
+    <ImageView
+        android:id="@+id/btnMainMenu"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="72dp"
+        android:src="@drawable/pokeballmenu"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Panel de Pokémon Cercanos abajo a la derecha -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardNearby"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="72dp"
+        app:cardBackgroundColor="#CCDDDDDD"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layoutNearbySummary"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+            <!-- Los 3 iconos se añadirán por código -->
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Menú Desplegable -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSubMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D6EAF8"
+        android:visibility="gone"
+        android:elevation="25dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <!-- Botón Configuración arriba a la derecha del menú -->
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="24dp"
+            android:src="@android:drawable/ic_menu_manage"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:tint="#2980B9"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btnMenuCollection"
+                android:layout_width="320dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bannerequipo"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:shapeAppearanceOverlay="@style/RoundedShape"
+                android:layout_marginBottom="6dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btnMenuBag"
+                android:layout_width="320dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bannermochila"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:shapeAppearanceOverlay="@style/RoundedShape"
+                android:layout_marginBottom="6dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btnMenuNearby"
+                android:layout_width="320dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bannercombateconamigos"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:shapeAppearanceOverlay="@style/RoundedShape"
+                android:layout_marginBottom="6dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btnMenuTCG"
+                android:layout_width="320dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bannercartaspokemon"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:shapeAppearanceOverlay="@style/RoundedShape"
+                android:layout_marginBottom="6dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btnMenuShop"
+                android:layout_width="320dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bannertienda"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:shapeAppearanceOverlay="@style/RoundedShape"
+                android:layout_marginBottom="6dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btnMenuPokedex"
+                android:layout_width="320dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bannerpokedex"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:shapeAppearanceOverlay="@style/RoundedShape"
+                android:layout_marginBottom="24dp" />
+
+            <ImageButton
+                android:id="@+id/btnCloseMenu"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="50dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:contentDescription="Cerrar" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnCancelTracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="DETENER RASTREO"
+        android:backgroundTint="#C0392B"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

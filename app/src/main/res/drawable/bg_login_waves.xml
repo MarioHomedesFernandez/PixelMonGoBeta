@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="1080dp"
+    android:height="1920dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1920">
+
+    <!-- Fondo Blanco Base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M0,0h1080v1920h-1080z" />
+
+    <!-- Onda Superior Sutil -->
+    <path
+        android:fillColor="#F0F7FF"
+        android:pathData="M0,0h1080v450c-200,100 -400,100 -540,0c-140,-100 -340,-100 -540,0z" />
+
+    <!-- Onda Azul Claro 1 -->
+    <path
+        android:fillAlpha="0.4"
+        android:fillColor="#B3E5FC"
+        android:pathData="M0,1920L0,1500c200,-100 400,-100 540,0c140,100 340,100 540,0l0,420z" />
+
+    <!-- Onda Azul Claro 2 -->
+    <path
+        android:fillAlpha="0.3"
+        android:fillColor="#81D4FA"
+        android:pathData="M0,1920L0,1650c200,100 400,100 540,0c140,-100 340,-100 540,0l0,270z" />
+
+    <!-- Brillo central -->
+    <path
+        android:fillAlpha="0.2"
+        android:fillColor="#E3F2FD"
+        android:pathData="M540,960m-600,0a600,600 0,1 1,1200 0a600,600 0,1 1,-1200 0" />
+</vector>

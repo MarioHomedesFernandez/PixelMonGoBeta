@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.simplemonstergo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Google Nearby Connections Permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/portadapagweb"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/portadapagweb"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SimpleMonsterGo"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".CaptureActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".CollectionActivity"
+            android:exported="false"
+            android:label="Mi Colección"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PokemonDetailActivity"
+            android:exported="false"
+            android:label="Detalles del Pokémon"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PokemonCenterActivity"
+            android:exported="false"
+            android:label="Centro Pokémon"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".BattleActivity"
+            android:exported="false"
+            android:label="Combate Pokémon"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".NearbyBattleActivity"
+            android:exported="false"
+            android:label="Combate Nearby"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="Perfil"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".EvolutionActivity"
+            android:exported="false"
+            android:label="Evolución"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".TcgActivity"
+            android:exported="false"
+            android:label="Álbum TCG"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PackOpeningActivity"
+            android:exported="false"
+            android:label="Abrir Sobres"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".BagActivity"
+            android:exported="false"
+            android:label="Mochila"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="Configuración"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ShopActivity"
+            android:exported="false"
+            android:label="Tienda"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".LeagueActivity"
+            android:exported="false"
+            android:label="Liga Pokémon"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".GymActivity"
+            android:exported="false"
+            android:label="Gimnasio"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".RaidActivity"
+            android:exported="false"
+            android:label="Incursión"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".TutorialActivity"
+            android:exported="false"
+            android:label="Tutorial"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".TradeActivity"
+            android:exported="false"
+            android:label="Intercambio"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PokedexActivity"
+            android:exported="false"
+            android:label="Pokédex"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PokemonARActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:label="Pokémon en RA"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+
+</manifest>

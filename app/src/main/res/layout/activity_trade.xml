@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#D6EAF8">
+
+    <TextView
+        android:id="@+id/tvTradeStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Intercambio Pokémon"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Paso 1: Selección de Pokémon -->
+        <LinearLayout
+            android:id="@+id/layoutTradeSelection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecciona el Pokémon que vas a entregar:"
+                android:layout_marginBottom="16dp" />
+
+            <ImageView
+                android:id="@+id/ivMyTradePreview"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="16dp" />
+
+            <Spinner
+                android:id="@+id/spinnerTradePokemon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp" />
+
+            <Button
+                android:id="@+id/btnConfirmMySelection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONFIRMAR SELECCIÓN"
+                android:onClick="showNearbyStep"/>
+        </LinearLayout>
+
+        <!-- Paso 2: Conexión Nearby -->
+        <LinearLayout
+            android:id="@+id/layoutTradeNearby"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btnTradeHost"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="CREAR SALA DE INTERCAMBIO"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnTradeJoin"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="BUSCAR ENTRENADORES" />
+        </LinearLayout>
+
+        <!-- Paso 3: Confirmación de Intercambio -->
+        <LinearLayout
+            android:id="@+id/layoutTradeConfirmation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvTradeOfferText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Quieres recibir a...?"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <ImageView
+                android:id="@+id/ivOpponentTradePreview"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:id="@+id/btnAcceptTrade"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="ACEPTAR INTERCAMBIO"
+                android:backgroundTint="#27AE60" />
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <ImageView
+        android:id="@+id/ivBattleBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondobatalla" />
+
+    <!-- Datos Enemigo -->
+    <LinearLayout
+        android:id="@+id/layoutEnemyStatus"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:background="#80000000"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvEnemyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pokemon"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/pbEnemyHp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:progress="100"
+            android:progressDrawable="@drawable/custom_progress_bar" />
+
+        <TextView
+            android:id="@+id/tvEnemyHpText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="100/100"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivEnemy"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutEnemyStatus" />
+
+    <!-- Datos Jugador -->
+    <LinearLayout
+        android:id="@+id/layoutPlayerStatus"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="#80000000"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="120dp">
+
+        <TextView
+            android:id="@+id/tvPlayerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mi Pokemon"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/pbPlayerHp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:progress="100"
+            android:progressDrawable="@drawable/custom_progress_bar" />
+
+        <TextView
+            android:id="@+id/tvPlayerHpText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="100/100"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivPlayer"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@id/viewSpacer"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Elemento invisible para fijar la altura de los controles -->
+    <View
+        android:id="@+id/viewSpacer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Log de batalla -->
+    <TextView
+        android:id="@+id/tvBattleLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B3FFFFFF"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="¿Qué quieres hacer?"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/layoutActions" />
+
+    <!-- Menu de Acciones -->
+    <LinearLayout
+        android:id="@+id/layoutActions"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        android:background="#444444"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnActionAttack"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ATACAR"
+            android:textSize="18sp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnActionBag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="MOCHILA"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="4dp"
+            android:backgroundTint="#27AE60" />
+
+        <Button
+            android:id="@+id/btnActionSwitch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="CAMBIAR"
+            android:textSize="18sp"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="#2980B9" />
+    </LinearLayout>
+
+    <!-- Menu de Ataques -->
+    <GridLayout
+        android:id="@+id/layoutMoves"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        android:background="#444444"
+        android:columnCount="2"
+        android:padding="4dp"
+        android:rowCount="2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnMove1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="Ataque 1" />
+
+        <Button
+            android:id="@+id/btnMove2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="Ataque 2" />
+
+        <Button
+            android:id="@+id/btnMove3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="Ataque 3" />
+
+        <Button
+            android:id="@+id/btnMove4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="Ataque 4" />
+    </GridLayout>
+
+    <!-- Menu de Cambio -->
+    <HorizontalScrollView
+        android:id="@+id/layoutSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        android:background="#444444"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/containerSwitchButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:gravity="center_vertical" />
+    </HorizontalScrollView>
+
+    <!-- Menu de Mochila -->
+    <HorizontalScrollView
+        android:id="@+id/layoutBag"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        android:background="#444444"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/containerBagButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:gravity="center_vertical" />
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

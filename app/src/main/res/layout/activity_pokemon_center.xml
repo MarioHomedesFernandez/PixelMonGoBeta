@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- CABECERA -->
+    <TextView
+        android:id="@+id/tvCenterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Centro Pokémon"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- MENU PRINCIPAL -->
+    <LinearLayout
+        android:id="@+id/layoutMainMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvCenterTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/btnGoToPC"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:text="Almacenamiento PC"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnGoToTeams"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:text="Formar Equipos"
+            android:backgroundTint="@android:color/holo_green_dark" />
+    </LinearLayout>
+
+    <!-- VISTA ALMACENAMIENTO PC -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPCView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvCenterTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llSortCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnSortPokedexCenter"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nº Pokedex"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnSortLevelCenter"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnSortStatsCenter"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stats"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPC"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/llSortCenter"
+            app:layout_constraintBottom_toTopOf="@id/btnBulkTransferCenter" />
+
+        <Button
+            android:id="@+id/btnBulkTransferCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transferir (0)"
+            android:visibility="gone"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBackToMenuPC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@android:drawable/ic_menu_revert"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- VISTA FORMAR EQUIPOS -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTeamsView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvCenterTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTeamInstruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Toca un equipo para editarlo"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="#F0F0F0"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- EQUIPO 1 -->
+                <Button
+                    android:id="@+id/btnEditTeam1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Editar Equipo 1 (Seguido)" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter1_0" />
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter1_1" />
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter1_2" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter1_3" />
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter1_4" />
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter1_5" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#CCC" android:layout_marginVertical="16dp" />
+
+                <!-- EQUIPO 2 -->
+                <Button
+                    android:id="@+id/btnEditTeam2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Editar Equipo 2 (Seguido)" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter2_0" />
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter2_1" />
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter2_2" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter2_3" />
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter2_4" />
+                    <include layout="@layout/item_team_slot" android:id="@+id/slotCenter2_5" />
+                </LinearLayout>
+
+                <Space android:layout_width="match_parent" android:layout_height="80dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBackToMenuTeams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@android:drawable/ic_menu_revert"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <ImageView
+        android:id="@+id/ivBattleBackgroundNearby"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondobatalla" />
+
+    <!-- Pantalla de Conexión -->
+    <LinearLayout
+        android:id="@+id/layoutConnectionNearby"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D6EAF8"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COMBATE CERCANO"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="40dp" />
+
+        <Button
+            android:id="@+id/btnHostBattle"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="CREAR SALA"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnJoinBattle"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="UNIRSE A SALA"
+            android:backgroundTint="#27AE60" />
+    </LinearLayout>
+
+    <!-- Pantalla de Batalla (Oculta al inicio) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBattleNearby"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <!-- Datos Enemigo -->
+        <LinearLayout
+            android:id="@+id/layoutEnemyStatusNearby"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:background="#80000000"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvEnemyNameNearby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rival"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/pbEnemyHpNearby"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="100"
+                android:progressDrawable="@drawable/custom_progress_bar" />
+
+            <TextView
+                android:id="@+id/tvEnemyHpTextNearby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="100/100"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivEnemyNearby"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutEnemyStatusNearby" />
+
+        <!-- Datos Jugador -->
+        <LinearLayout
+            android:id="@+id/layoutPlayerStatusNearby"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="#80000000"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/viewSpacerNearby"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="120dp">
+
+            <TextView
+                android:id="@+id/tvPlayerNameNearby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tú"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/pbPlayerHpNearby"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="100"
+                android:progressDrawable="@drawable/custom_progress_bar" />
+
+            <TextView
+                android:id="@+id/tvPlayerHpTextNearby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="100/100"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivPlayerNearby"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@id/viewSpacerNearby"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Elemento invisible para fijar altura -->
+        <View
+            android:id="@+id/viewSpacerNearby"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Log de batalla -->
+        <TextView
+            android:id="@+id/tvBattleLogNearby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B3FFFFFF"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Esperando conexión..."
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/layoutActionsNearby" />
+
+        <!-- Menu de Acciones -->
+        <LinearLayout
+            android:id="@+id/layoutActionsNearby"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="32dp"
+            android:background="#444444"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/btnActionAttackNearby"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="ATACAR"
+                android:textSize="20sp"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnActionSwitchNearby"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="CAMBIAR"
+                android:textSize="20sp"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="#2980B9" />
+        </LinearLayout>
+
+        <!-- Menu de Ataques (Oculto inicialmente) -->
+        <GridLayout
+            android:id="@+id/layoutMovesNearby"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="32dp"
+            android:background="#444444"
+            android:columnCount="2"
+            android:padding="4dp"
+            android:rowCount="2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/btnMoveNearby1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/btnMoveNearby2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/btnMoveNearby3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/btnMoveNearby4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="-" />
+        </GridLayout>
+
+        <!-- Menu de Cambio (Oculto inicialmente) -->
+        <HorizontalScrollView
+            android:id="@+id/layoutSwitchNearby"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="32dp"
+            android:background="#444444"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:id="@+id/containerSwitchButtonsNearby"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:gravity="center_vertical" />
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

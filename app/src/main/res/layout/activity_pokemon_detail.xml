@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/ivDetailPokemon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:contentDescription="Pokemon image" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Nombre" />
+
+        <TextView
+            android:id="@+id/tvDetailLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Nivel 1" />
+
+        <TextView
+            android:id="@+id/tvDetailTypes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:text="Tipos" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:useDefaultMargins="true">
+
+            <TextView android:text="HP:" android:textStyle="bold" />
+            <TextView android:id="@+id/tvStatHp" android:text="0" />
+
+            <TextView android:text="Ataque:" android:textStyle="bold" />
+            <TextView android:id="@+id/tvStatAtk" android:text="0" />
+
+            <TextView android:text="Defensa:" android:textStyle="bold" />
+            <TextView android:id="@+id/tvStatDef" android:text="0" />
+
+            <TextView android:text="Atq. Esp:" android:textStyle="bold" />
+            <TextView android:id="@+id/tvStatSpAtk" android:text="0" />
+
+            <TextView android:text="Def. Esp:" android:textStyle="bold" />
+            <TextView android:id="@+id/tvStatSpDef" android:text="0" />
+
+            <TextView android:text="Velocidad:" android:textStyle="bold" />
+            <TextView android:id="@+id/tvStatSpeed" android:text="0" />
+        </GridLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/tvCandies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caramelos: 0"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Movimientos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/layoutMoves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <!-- Los movimientos se añadirán dinámicamente -->
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLevelUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Subir de Nivel (1 Caramelo)" />
+
+        <Button
+            android:id="@+id/btnEvolve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Evolucionar" />
+
+        <Button
+            android:id="@+id/btnTransfer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textColor="@android:color/holo_red_dark"
+            android:text="Transferir al Profesor" />
+
+        <Button
+            android:id="@+id/btnAR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:text="Sacar en RA" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+</ScrollView>
